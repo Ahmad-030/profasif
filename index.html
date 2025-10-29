@@ -17,8 +17,15 @@
             <!-- Email Button -->
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=masifshafii@gmail.com" target="_blank" class="email">✉️ Email Me</a>
             
-            <!-- Logo in the center -->
-            <div class="logo">Muhammad Asif.</div>
+            <!-- Logo in the center - Clickable to go home -->
+            <a href="#home" class="logo" id="logoLink">Muhammad Asif.</a>
+            
+            <!-- Hamburger Menu (Mobile Only) -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             
             <!-- Navigation menu on the right -->
             <ul class="nav-menu">
@@ -27,13 +34,6 @@
                 <li><a href="#blog" class="nav-link">Blog</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-
-            <!-- Hamburger Menu (Mobile Only) -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
 
         <!-- Modal Dialog (Mobile Menu) -->
@@ -49,6 +49,7 @@
                 <li><a href="#blog" class="modal-link">Blog</a></li>
                 <li><a href="#contact" class="modal-link">Contact</a></li>
             </ul>
+        </div>
     </header>
 
     <!-- ============================================
@@ -71,7 +72,7 @@
                 Passionate educator committed to creating meaningful learning experiences across diverse academic disciplines and fostering critical thinking in the next generation of leaders.
             </p>
 
-            <!-- Call-to-action section -->
+            <!-- CTA for Desktop (Hidden on mobile) -->
             <div class="cta-section">
                 <button class="btn-gold" id="ctaButton">
                     Let's Connect
@@ -93,6 +94,16 @@
                 <div class="experience-badge">
                     40 YEARS<br>EXPERIENCE
                 </div>
+            </div>
+        </div>
+
+        <!-- CTA for Mobile (Shows after image on mobile) -->
+        <div class="hero-cta-mobile">
+            <div class="cta-section">
+                <button class="btn-gold" id="ctaButtonMobile">
+                    Let's Connect
+                </button>
+                <span class="cta-text">Ready for collaboration</span>
             </div>
         </div>
     </section>

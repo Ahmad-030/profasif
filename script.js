@@ -3,13 +3,14 @@
    
    TABLE OF CONTENTS:
    1. DOM Elements
-   2. Navigation & Scrolling
-   3. Button Events
-   4. Card Interactions
-   5. Gallery Interactions
-   6. Scroll Animations
-   7. Utility Functions
-   8. Initialization
+   2. Mobile Menu Functions
+   3. Navigation & Scrolling
+   4. Button Events
+   5. Card Interactions
+   6. Gallery Interactions
+   7. Scroll Animations
+   8. Utility Functions
+   9. Initialization
    ============================================ */
 
 
@@ -17,14 +18,101 @@
    1. DOM ELEMENTS
    ============================================ */
 const ctaButton = document.getElementById('ctaButton');
+const ctaButtonMobile = document.getElementById('ctaButtonMobile');
 const navLinks = document.querySelectorAll('.nav-link');
+const modalLinks = document.querySelectorAll('.modal-link');
 const aboutCards = document.querySelectorAll('.about-card');
 const playIcons = document.querySelectorAll('.play-icon');
 const galleryItems = document.querySelectorAll('.gallery-item');
+const hamburger = document.getElementById('hamburger');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalDialog = document.getElementById('modalDialog');
+const modalClose = document.getElementById('modalClose');
+const logoLink = document.getElementById('logoLink');
 
 
 /* ============================================
-   2. NAVIGATION & SCROLLING
+   2. MOBILE MENU FUNCTIONS
+   ============================================ */
+
+/**
+ * Open Modal Menu
+ */
+function openModal() {
+    if (modalOverlay && modalDialog && hamburger) {
+        modalOverlay.classList.add('active');
+        modalDialog.classList.add('active');
+        hamburger.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        console.log('✓ Mobile menu opened');
+    }
+}
+
+/**
+ * Close Modal Menu
+ */
+function closeModal() {
+    if (modalOverlay && modalDialog && hamburger) {
+        modalOverlay.classList.remove('active');
+        modalDialog.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+        console.log('✓ Mobile menu closed');
+    }
+}
+
+/**
+ * Hamburger click event - Toggle menu
+ */
+if (hamburger) {
+    hamburger.addEventListener('click', function() {
+        if (modalDialog.classList.contains('active')) {
+            closeModal();
+        } else {
+            openModal();
+        }
+    });
+}
+
+/**
+ * Modal overlay click event - Close menu
+ */
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', closeModal);
+}
+
+/**
+ * Modal close button click event
+ */
+if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+}
+
+/**
+ * Modal links click events - Navigate and close menu
+ */
+modalLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            closeModal();
+            setTimeout(() => {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300);
+            console.log(`✓ Navigated to ${targetId} from mobile menu`);
+        }
+    });
+});
+
+
+/* ============================================
+   3. NAVIGATION & SCROLLING
    ============================================ */
 
 /**
@@ -50,6 +138,23 @@ navLinks.forEach(link => {
         }
     });
 });
+
+/**
+ * Logo click - Navigate to home
+ */
+if (logoLink) {
+    logoLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
+            homeSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            console.log('✓ Logo clicked - navigated to Home');
+        }
+    });
+}
 
 /**
  * Highlight active navigation link based on scroll position
@@ -80,11 +185,11 @@ window.addEventListener('scroll', function() {
 
 
 /* ============================================
-   3. BUTTON EVENTS
+   4. BUTTON EVENTS
    ============================================ */
 
 /**
- * CTA Button - "Let's Talk"
+ * CTA Button - "Let's Connect" (Desktop)
  * Scrolls to contact section
  */
 if (ctaButton) {
@@ -109,9 +214,30 @@ if (ctaButton) {
     });
 }
 
+/**
+ * CTA Button - "Let's Connect" (Mobile)
+ * Scrolls to contact section
+ */
+if (ctaButtonMobile) {
+    ctaButtonMobile.addEventListener('click', function() {
+        const contactSection = document.getElementById('contact');
+        
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            console.log('✓ Mobile CTA button clicked - scrolling to contact');
+        } else {
+            alert('Contact section coming soon!');
+        }
+    });
+}
+
 
 /* ============================================
-   4. CARD INTERACTIONS
+   5. CARD INTERACTIONS
    ============================================ */
 
 /**
@@ -135,7 +261,7 @@ aboutCards.forEach((card, index) => {
 
 
 /* ============================================
-   5. GALLERY INTERACTIONS
+   6. GALLERY INTERACTIONS
    ============================================ */
 
 /**
@@ -164,7 +290,7 @@ galleryItems.forEach((item, index) => {
 
 
 /* ============================================
-   6. SCROLL ANIMATIONS
+   7. SCROLL ANIMATIONS
    ============================================ */
 
 /**
@@ -199,7 +325,7 @@ aboutCards.forEach(card => {
 
 
 /* ============================================
-   7. UTILITY FUNCTIONS
+   8. UTILITY FUNCTIONS
    ============================================ */
 
 /**
@@ -222,7 +348,7 @@ function logInitialization() {
     console.log('%c║  TEACHER PORTFOLIO - LOADED ✓    ║', 'color: #f59e0b; font-weight: bold;');
     console.log('%c╚════════════════════════════════════╝', 'color: #f59e0b; font-weight: bold;');
     console.log('%cVersion: 1.0.0', 'color: #2563eb;');
-    console.log('%cAuthor: Rock William', 'color: #2563eb;');
+    console.log('%cAuthor: Muhammad Asif', 'color: #2563eb;');
     console.log('%cReady for interactions!', 'color: #10b981;');
 }
 
@@ -258,7 +384,7 @@ function setupSmoothScroll() {
 
 
 /* ============================================
-   8. INITIALIZATION - RUN ON PAGE LOAD
+   9. INITIALIZATION - RUN ON PAGE LOAD
    ============================================ */
 
 /**
@@ -273,6 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Log number of elements
     console.log(`Found ${navLinks.length} navigation links`);
+    console.log(`Found ${modalLinks.length} modal links`);
     console.log(`Found ${aboutCards.length} about cards`);
     console.log(`Found ${galleryItems.length} gallery items`);
 });
@@ -290,6 +417,12 @@ window.addEventListener('load', function() {
  */
 window.addEventListener('resize', function() {
     console.log(`Window resized: ${window.innerWidth}x${window.innerHeight}`);
+    
+    // Close mobile menu if window is resized to desktop size
+    if (window.innerWidth > 768 && modalDialog.classList.contains('active')) {
+        closeModal();
+        console.log('✓ Mobile menu closed due to resize');
+    }
 });
 
 
@@ -301,16 +434,37 @@ window.addEventListener('resize', function() {
  * Add keyboard navigation support
  */
 document.addEventListener('keydown', function(e) {
+    // Press 'Escape' to close mobile menu
+    if (e.key === 'Escape' && modalDialog.classList.contains('active')) {
+        closeModal();
+        console.log('Keyboard: Mobile menu closed with ESC');
+    }
+    
     // Press 'H' to go to Home
     if (e.key === 'h' || e.key === 'H') {
-        document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
-        console.log('Keyboard: Jumped to Home');
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
+            homeSection.scrollIntoView({ behavior: 'smooth' });
+            console.log('Keyboard: Jumped to Home');
+        }
     }
     
     // Press 'A' to go to About
     if (e.key === 'a' || e.key === 'A') {
-        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-        console.log('Keyboard: Jumped to About');
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+            console.log('Keyboard: Jumped to About');
+        }
+    }
+    
+    // Press 'C' to go to Contact
+    if (e.key === 'c' || e.key === 'C') {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            console.log('Keyboard: Jumped to Contact');
+        }
     }
 });
 
@@ -324,4 +478,11 @@ document.addEventListener('keydown', function(e) {
  */
 window.addEventListener('error', function(e) {
     console.error('❌ Error occurred:', e.error);
+});
+
+/**
+ * Log when user leaves the page
+ */
+window.addEventListener('beforeunload', function() {
+    console.log('👋 User leaving the page');
 });
