@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Muhammad Asif - Teacher Portfolio</title>
+    
+    <!-- Link to external CSS file (make sure style.css is in the same folder) -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- ============================================
+         HEADER SECTION
+         ============================================ -->
+    <header>
+        <nav class="navbar">
+            <!-- Email Button -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=masifshafii@gmail.com" target="_blank" class="email">✉️ Email Me</a>
+            
+            <!-- Logo in the center -->
+            <div class="logo">Muhammad Asif.</div>
+            
+            <!-- Navigation menu on the right -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu (Mobile Only) -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <!-- Modal Dialog (Mobile Menu) -->
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-dialog" id="modalDialog">
+            <div class="modal-header">
+                <h2>Menu</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <ul class="modal-menu">
+                <li><a href="#home" class="modal-link">Home</a></li>
+                <li><a href="#about" class="modal-link">About</a></li>
+                <li><a href="#blog" class="modal-link">Blog</a></li>
+                <li><a href="#contact" class="modal-link">Contact</a></li>
+            </ul>
+    </header>
+
+    <!-- ============================================
+         HERO/HOME SECTION
+         ============================================ -->
+    <section id="home" class="hero">
+        <!-- Left side: Text content -->
+        <div class="hero-left">
+            <!-- Greeting text -->
+            <div class="hero-greeting">Hello I'm</div>
+            
+            <!-- Main title/name - TWO LINES -->
+            <h1 class="hero-title">Dr Muhammad<br>Asif</h1>
+            
+            <!-- Subtitle/profession -->
+            <p class="hero-subtitle">Professor at a Govt College University Faisalabad</p>
+
+            <!-- Description text -->
+            <p class="hero-description">
+                Passionate educator committed to creating meaningful learning experiences across diverse academic disciplines and fostering critical thinking in the next generation of leaders.
+            </p>
+
+            <!-- Call-to-action section -->
+            <div class="cta-section">
+                <button class="btn-gold" id="ctaButton">
+                    Let's Connect
+                </button>
+                <span class="cta-text">Ready for collaboration</span>
+            </div>
+        </div>
+
+        <!-- Right side: Profile image with accent -->
+        <div class="hero-right">
+            <div class="image-container">
+                <!-- Gold accent line -->
+                <div class="gold-accent"></div>
+                
+                <!-- Profile image -->
+                <img src="Images/WhatsApp Image 2025-10-24 at 14.04.51_8b18518e.jpg" alt="Dr Muhammad Asif" class="profile-image">
+                
+                <!-- Experience badge -->
+                <div class="experience-badge">
+                    40 YEARS<br>EXPERIENCE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <!-- Section title -->
+            <h2 class="about-title">ABOUT ME</h2>
+
+            <!-- About content with gallery and cards -->
+            <div class="about-content">
+                <!-- Image gallery -->
+                <div class="about-gallery">
+                    <!-- Gallery item 1 with play button -->
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/250x250?text=Gallery+1" alt="Gallery 1">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    
+                    <!-- Gallery item 2 -->
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/250x250?text=Gallery+2" alt="Gallery 2">
+                    </div>
+                </div>
+
+                <!-- About card 1 -->
+                <div class="about-card">
+                    <h3>Education Excellence</h3>
+                    <p>
+                        With 40 years of experience in higher education, I've cultivated a teaching philosophy that prioritizes student engagement and real-world application of academic concepts.
+                    </p>
+                </div>
+
+                <!-- About card 2 -->
+                <div class="about-card">
+                    <h3>Research & Innovation</h3>
+                    <p>
+                        My commitment extends beyond classroom instruction to include groundbreaking research projects and mentorship programs that shape the future of academic discipline.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BLOG SECTION
+         ============================================ -->
+    <section id="blog" class="blog-section">
+        <div class="blog-container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <p class="section-subtitle">Coming soon...</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Coming soon...</p>
+        </div>
+    </section>
+
+    <!-- Link to external JavaScript file -->
+    <script src="./script.js"></script>
+</body>
+</html>
