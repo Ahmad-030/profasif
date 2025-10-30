@@ -122,13 +122,12 @@
 
 .cta-section {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     animation: fadeInUp 0.8s ease-out 0.5s both;
     margin-top: var(--spacing-lg);
-    width: 100%;
 }
 
 .cta-text {
@@ -136,7 +135,9 @@
     font-size: 0.9rem;
     font-weight: 600;
     margin: 0;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
 }
 
 .hero-cta-mobile {
@@ -246,5 +247,227 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Button Styles */
+.btn-books {
+    background: transparent;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    transition: all 0.3s ease;
+}
+
+.btn-books:hover {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* ============================================
+   TABLET STYLES (768px - 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+    .hero {
+        gap: var(--spacing-xl);
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .image-container {
+        max-width: 400px;
+    }
+}
+
+/* ============================================
+   MOBILE STYLES (Up to 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        height: auto;
+        grid-template-columns: 1fr;
+        padding: 100px 20px 60px;
+        gap: 40px;
+    }
+    
+    .hero::before {
+        width: 200px;
+        height: 200px;
+        bottom: -30px;
+        right: -30px;
+    }
+    
+    .hero-left {
+        order: 2;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-right {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    .hero-greeting {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .image-container {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .experience-badge {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 1rem 1.5rem;
+        font-size: 0.75rem;
+        max-width: 150px;
+    }
+    
+    /* Desktop CTA - Hide on mobile */
+    .hero-left .cta-section {
+        display: none;
+    }
+    
+    /* Mobile CTA Section */
+    .hero-cta-mobile {
+        display: block;
+        width: 100%;
+        padding: 30px 20px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        order: 3;
+    }
+    
+    .hero-cta-mobile .cta-section {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+    }
+    
+    .hero-cta-mobile .btn-gold {
+        width: 100%;
+        margin: 0;
+        padding: 16px 32px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-cta-mobile .btn-books {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    
+    .hero-cta-mobile .cta-text {
+        margin-top: 10px;
+        margin-bottom: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE (Up to 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 15px 40px;
+        gap: 30px;
+    }
+    
+    .hero-greeting {
+        font-size: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    .image-container {
+        max-width: 280px;
+    }
+    
+    .experience-badge {
+        bottom: 0.5rem;
+        right: 0.5rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.7rem;
+        max-width: 130px;
+    }
+    
+    .hero-cta-mobile {
+        padding: 20px 15px;
+    }
+    
+    .hero-cta-mobile .btn-gold {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+    
+    .hero-cta-mobile .btn-books {
+        margin-bottom: 12px;
+    }
+    
+    .hero-cta-mobile .cta-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE (Height < 600px)
+   ============================================ */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 60px 20px 40px;
+    }
+    
+    .image-container {
+        max-width: 250px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .experience-badge {
+        display: none;
     }
 }

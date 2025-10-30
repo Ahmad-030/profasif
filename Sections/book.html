@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books - Dr Muhammad Asif</title>
+    <link rel="stylesheet" href="../css/book.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Home</a>
+        
+        <header>
+            <h1>My Publications</h1>
+            <p class="subtitle">A Collection of Academic Works & Research</p>
+        </header>
+
+        <div class="books-grid" id="booksGrid"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <div class="modal-header" id="modalHeader"></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="../js/book.js"></script>
+</body>
+</html>
+
+
+

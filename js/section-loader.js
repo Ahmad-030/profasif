@@ -42,6 +42,37 @@ async function loadSectionContent() {
 function reinitializeElements() {
     console.log('🔄 Reinitializing interactive elements...');
 
+    // ========================================
+    // BOOKS BUTTONS - ADD THIS SECTION
+    // ========================================
+    console.log('🔍 Setting up books buttons...');
+    
+    const booksButton = document.getElementById('booksButton');
+    const booksButtonMobile = document.getElementById('booksButtonMobile');
+    
+    if (booksButton) {
+        booksButton.addEventListener('click', function(e) {
+            console.log('🎯 Desktop Books button clicked!');
+            e.preventDefault();
+            window.location.href = 'Sections/book.html';
+        });
+        console.log('✓ Desktop books button initialized');
+    } else {
+        console.warn('⚠ Desktop books button not found');
+    }
+    
+    if (booksButtonMobile) {
+        booksButtonMobile.addEventListener('click', function(e) {
+            console.log('🎯 Mobile Books button clicked!');
+            e.preventDefault();
+            window.location.href = 'Sections/book.html';
+        });
+        console.log('✓ Mobile books button initialized');
+    } else {
+        console.warn('⚠ Mobile books button not found');
+    }
+    // ========================================
+
     // Reinitialize CTA buttons
     const ctaButton = document.getElementById('ctaButton');
     const ctaButtonMobile = document.getElementById('ctaButtonMobile');
