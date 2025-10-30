@@ -112,3 +112,88 @@
     line-height: 1.8;
     font-size: 0.95rem;
 }
+
+/* CTA Card with Buttons */
+.about-cta-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: var(--spacing-md);
+}
+
+.about-buttons .btn-gold {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-articles {
+    background: transparent;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+.btn-articles:hover {
+    background: var(--accent-gold);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .about-gallery {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .about-gallery {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 1.8rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .about-card p {
+        font-size: 0.9rem;
+    }
+}

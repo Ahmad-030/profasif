@@ -9,8 +9,9 @@
     gap: var(--spacing-2xl);
     align-items: center;
     padding: var(--spacing-2xl) var(--spacing-lg);
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
     position: relative;
     overflow: hidden;
 }
@@ -43,6 +44,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
 @keyframes slideInLeft {
@@ -93,7 +97,7 @@
 
 .hero-subtitle {
     font-size: 1.3rem;
-    color: var(--text-muted);
+    color: var(--white);
     margin: 0;
     font-weight: 400;
     line-height: 1.6;
@@ -112,7 +116,7 @@
 }
 
 .hero-description {
-    color: var(--text-muted);
+    color: #d1d5db;
     margin: 0;
     line-height: 1.8;
     font-size: 1rem;
@@ -122,22 +126,30 @@
 
 .cta-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
     animation: fadeInUp 0.8s ease-out 0.5s both;
     margin-top: var(--spacing-lg);
 }
 
+.cta-section .btn-gold {
+    padding: 22px 56px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.btn-gold {
+    padding: 22px 56px;
+    font-size: 1.2rem;
+}
+
 .cta-text {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    color: #d1d5db;
+    font-size: 0.95rem;
     font-weight: 600;
     margin: 0;
-    width: 100%;
-    text-align: left;
-    margin-top: 5px;
+    text-align: center;
 }
 
 .hero-cta-mobile {
@@ -150,6 +162,9 @@
     justify-content: center;
     align-items: center;
     animation: slideInRight 0.8s ease-out;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
 @keyframes slideInRight {
@@ -248,21 +263,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Button Styles */
-.btn-books {
-    background: transparent;
-    border: 2px solid #d4af37;
-    color: #d4af37;
-    transition: all 0.3s ease;
-}
-
-.btn-books:hover {
-    background: #d4af37;
-    color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 }
 
 /* ============================================
@@ -365,7 +365,7 @@
     .hero-cta-mobile .cta-section {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         gap: 15px;
         width: 100%;
         padding: 0;
@@ -375,15 +375,8 @@
     .hero-cta-mobile .btn-gold {
         width: 100%;
         margin: 0;
-        padding: 16px 32px;
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
-    
-    .hero-cta-mobile .btn-books {
-        width: 100%;
-        margin: 0;
-        margin-bottom: 15px;
+        padding: 22px 48px;
+        font-size: 1.2rem;
     }
     
     .hero-cta-mobile .cta-text {
@@ -436,17 +429,12 @@
     }
     
     .hero-cta-mobile .btn-gold {
-        padding: 14px 24px;
-        font-size: 0.95rem;
-        margin-bottom: 12px;
-    }
-    
-    .hero-cta-mobile .btn-books {
-        margin-bottom: 12px;
+        padding: 16px 28px;
+        font-size: 1rem;
     }
     
     .hero-cta-mobile .cta-text {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
 

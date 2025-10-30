@@ -1,3 +1,21 @@
+/* ============================================
+   BOOKS PAGE STYLES
+   ============================================ */
+
+:root {
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --accent-gold: #f59e0b;
+    --white: #ffffff;
+    --text-muted: #a0a0a0;
+    --border-color: #2a2a2a;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +23,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--dark-bg);
+    color: var(--white);
     min-height: 100vh;
-    padding: 20px;
+    padding: var(--spacing-2xl);
 }
 
 .container {
@@ -19,63 +37,62 @@ body {
 
 header {
     text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 50px;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
 }
 
 .back-button {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    background: transparent;
-    border: 2px solid #d4af37;
-    color: #d4af37;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    text-decoration: none;
     display: inline-block;
+    margin-bottom: var(--spacing-xl);
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .back-button:hover {
-    background: #d4af37;
-    color: #000;
-    transform: translateX(-5px);
+    background: var(--accent-gold);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
 }
 
 h1 {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    background: linear-gradient(135deg, #d4af37 0%, #f4e5a3 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -1px;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #999;
-    margin-bottom: 10px;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
 }
 
 .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 40px;
-    padding: 20px;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-lg);
 }
 
 .book-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 20px;
+    background: rgba(10, 10, 10, 0.6);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
     cursor: pointer;
     transition: all 0.4s ease;
-    border: 2px solid transparent;
+    border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .book-card::before {
@@ -85,15 +102,15 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0) 100%);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
 
 .book-card:hover {
     transform: translateY(-10px);
-    border-color: #d4af37;
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
 }
 
 .book-card:hover::before {
@@ -103,14 +120,15 @@ h1 {
 .book-image-container {
     width: 100%;
     height: 350px;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    background: rgba(10, 10, 10, 0.8);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-lg);
     overflow: hidden;
     position: relative;
+    border: 1px solid var(--border-color);
 }
 
 .book-image {
@@ -126,26 +144,31 @@ h1 {
 
 .book-placeholder {
     font-size: 4rem;
-    color: #d4af37;
+    color: var(--accent-gold);
 }
 
 .book-title {
     font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #fff;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--white);
     position: relative;
     z-index: 1;
+    line-height: 1.4;
 }
 
 .book-year {
-    color: #d4af37;
+    color: var(--accent-gold);
     font-size: 0.95rem;
     position: relative;
     z-index: 1;
+    font-weight: 600;
 }
 
-/* Modal Styles */
+/* ============================================
+   MODAL STYLES
+   ============================================ */
+
 .modal {
     display: none;
     position: fixed;
@@ -162,6 +185,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: var(--spacing-lg);
 }
 
 @keyframes fadeIn {
@@ -170,15 +194,16 @@ h1 {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border-radius: 20px;
+    background: rgba(10, 10, 10, 0.95);
+    border-radius: 12px;
     max-width: 900px;
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    border: 2px solid #d4af37;
+    border: 1px solid var(--accent-gold);
     animation: slideUp 0.4s ease;
+    backdrop-filter: blur(20px);
 }
 
 @keyframes slideUp {
@@ -194,9 +219,9 @@ h1 {
 
 .modal-header {
     display: flex;
-    gap: 30px;
-    padding: 40px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .modal-image {
@@ -205,18 +230,20 @@ h1 {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
 }
 
 .modal-image-placeholder {
     width: 200px;
     height: 280px;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    background: rgba(10, 10, 10, 0.8);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    color: #d4af37;
+    color: var(--accent-gold);
+    border: 1px solid var(--border-color);
 }
 
 .modal-title-section {
@@ -225,36 +252,40 @@ h1 {
 
 .modal-title {
     font-size: 2rem;
-    margin-bottom: 15px;
-    color: #d4af37;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-gold);
+    font-weight: 800;
+    line-height: 1.3;
 }
 
 .modal-meta {
-    color: #999;
-    margin-bottom: 10px;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
     font-size: 1rem;
+    line-height: 1.6;
 }
 
 .modal-body {
-    padding: 40px;
+    padding: var(--spacing-2xl);
 }
 
 .modal-section {
-    margin-bottom: 30px;
+    margin-bottom: var(--spacing-xl);
 }
 
 .modal-section h3 {
-    color: #d4af37;
+    color: var(--accent-gold);
     font-size: 1.3rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-    padding-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-sm);
 }
 
 .modal-section p {
-    color: #ccc;
+    color: #d1d5db;
     line-height: 1.8;
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .close-modal {
@@ -262,8 +293,8 @@ h1 {
     top: 20px;
     right: 20px;
     background: transparent;
-    border: 2px solid #d4af37;
-    color: #d4af37;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -273,33 +304,90 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
 }
 
 .close-modal:hover {
-    background: #d4af37;
-    color: #000;
+    background: var(--accent-gold);
+    color: var(--dark-bg);
     transform: rotate(90deg);
 }
 
-@media (max-width: 768px) {
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--darker-bg);
+    border-radius: 5px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--accent-gold);
+    border-radius: 5px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #fbbf24;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    body {
+        padding: var(--spacing-xl);
+    }
+
     h1 {
         font-size: 2.5rem;
     }
 
+    .books-grid {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-lg);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
     .back-button {
-        position: static;
-        margin-bottom: 20px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 
     .books-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 30px;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-sm);
+    }
+
+    .book-image-container {
+        height: 300px;
     }
 
     .modal-header {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: var(--spacing-xl);
     }
 
     .modal-image,
@@ -311,22 +399,35 @@ h1 {
     .modal-title {
         font-size: 1.5rem;
     }
+
+    .modal-body {
+        padding: var(--spacing-xl);
+    }
+
+    .modal-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .modal-section p {
+        font-size: 0.95rem;
+    }
 }
 
-/* Scrollbar Styles */
-.modal-content::-webkit-scrollbar {
-    width: 10px;
-}
+/* Small Mobile */
+@media (max-width: 480px) {
+    body {
+        padding: var(--spacing-md);
+    }
 
-.modal-content::-webkit-scrollbar-track {
-    background: #1a1a1a;
-}
+    h1 {
+        font-size: 1.8rem;
+    }
 
-.modal-content::-webkit-scrollbar-thumb {
-    background: #d4af37;
-    border-radius: 5px;
-}
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
 
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background: #f4e5a3;
+    .book-image-container {
+        height: 280px;
+    }
 }

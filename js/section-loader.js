@@ -43,9 +43,9 @@ function reinitializeElements() {
     console.log('🔄 Reinitializing interactive elements...');
 
     // ========================================
-    // BOOKS BUTTONS - ADD THIS SECTION
+    // HERO SECTION - BOOKS BUTTONS
     // ========================================
-    console.log('🔍 Setting up books buttons...');
+    console.log('🔍 Setting up hero books buttons...');
     
     const booksButton = document.getElementById('booksButton');
     const booksButtonMobile = document.getElementById('booksButtonMobile');
@@ -71,9 +71,40 @@ function reinitializeElements() {
     } else {
         console.warn('⚠ Mobile books button not found');
     }
-    // ========================================
 
-    // Reinitialize CTA buttons
+    // ========================================
+    // ABOUT SECTION - BOOKS & ARTICLES BUTTONS
+    // ========================================
+    console.log('🔍 Setting up about section buttons...');
+    
+    const aboutBooksButton = document.getElementById('aboutBooksButton');
+    const aboutArticlesButton = document.getElementById('aboutArticlesButton');
+    
+    if (aboutBooksButton) {
+        aboutBooksButton.addEventListener('click', function(e) {
+            console.log('🎯 About Books button clicked!');
+            e.preventDefault();
+            window.location.href = 'Sections/book.html';
+        });
+        console.log('✓ About books button initialized');
+    } else {
+        console.warn('⚠ About books button not found');
+    }
+    
+    if (aboutArticlesButton) {
+        aboutArticlesButton.addEventListener('click', function(e) {
+            console.log('🎯 About Articles button clicked!');
+            e.preventDefault();
+            window.location.href = 'Sections/articles.html';
+        });
+        console.log('✓ About articles button initialized');
+    } else {
+        console.warn('⚠ About articles button not found');
+    }
+
+    // ========================================
+    // CTA BUTTONS
+    // ========================================
     const ctaButton = document.getElementById('ctaButton');
     const ctaButtonMobile = document.getElementById('ctaButtonMobile');
 
@@ -97,7 +128,9 @@ function reinitializeElements() {
         });
     }
 
-    // Reinitialize about cards
+    // ========================================
+    // ABOUT CARDS
+    // ========================================
     const aboutCards = document.querySelectorAll('.about-card');
     aboutCards.forEach((card, index) => {
         card.addEventListener('mouseenter', function() {
@@ -118,7 +151,9 @@ function reinitializeElements() {
         card.style.transition = 'all 0.6s ease-out';
     });
 
-    // Reinitialize gallery items
+    // ========================================
+    // GALLERY ITEMS
+    // ========================================
     const playIcons = document.querySelectorAll('.play-icon');
     playIcons.forEach((icon, index) => {
         icon.addEventListener('click', function(e) {
@@ -135,7 +170,9 @@ function reinitializeElements() {
         });
     });
 
-    // Reinitialize contact form
+    // ========================================
+    // CONTACT FORM
+    // ========================================
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
